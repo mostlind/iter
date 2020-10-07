@@ -97,6 +97,8 @@ Iter(["a", "b", "c"]).join(" "); // 'a b c'
 
 ### `#collect`
 
+Create an object where the key is the first element of the tuple, and the value is the second
+
 ```typescript
 Iter([
   ["a", 1],
