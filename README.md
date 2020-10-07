@@ -112,7 +112,7 @@ Iter([
 ### `countFrom0`
 
 ```typescript
-countFrom0().take(3).toArray(); // [1, 2, 3]
+countFrom0().take(3).toArray(); // [0, 1, 2]
 ```
 
 ## Performance
