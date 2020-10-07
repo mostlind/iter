@@ -1,6 +1,6 @@
 # Iter
 
-A wrapper around iterators exposing a set of high-level utility functions. Fully typed.
+A wrapper around iterators exposing a set of high-level utility functions. Fully typed and tested.
 
 ## Conditional Methods
 
