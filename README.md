@@ -35,7 +35,7 @@ Iter([1, 2, 3])
 
 ```typescript
 Iter([1, 2, 3])
-  .map((x) => x % 2 === 0)
+  .filter((x) => x % 2 === 0)
   .toArray(); // [2]
 ```
 
