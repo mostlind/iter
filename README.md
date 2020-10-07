@@ -121,7 +121,7 @@ In testing I found the performance to be very similar to a `for..of` loop.
 
 Mapping over an array once is faster and uses less memory due to the overhead of iterators. But when chaining multiple operations on an array, e.g. `[].map(...).map(...).map(...)`, this library has much better speed and memory characteristics, due to `map` on array allocating a new array each call.
 
-I found that mapping over ten million 11-character string, `Array.prototype.map` used ~250 MB on the heap **_per `map`_**.
+I found that mapping over ten million 11-character strings, `Array.prototype.map` used ~250 MB on the heap **_per `map`_**.
 
 This library can have arbitrarily many calls to `#map` (or similar functions) without using more memory.
 
