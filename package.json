@@ -1,0 +1,26 @@
+{
+  "name": "iter",
+  "version": "1.0.0",
+  "description": "Nice tools to operate on iterators",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mostlind/iter.git"
+  },
+  "author": "Matt Ostlind",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mostlind/iter/issues"
+  },
+  "homepage": "https://github.com/mostlind/iter#readme",
+  "dependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.14",
+    "jest": "^26.5.0",
+    "typescript": "^4.0.3"
+  }
+}
