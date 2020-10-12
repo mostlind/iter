@@ -71,6 +71,17 @@ Iter([1, 2, 3]).drop(1).toArray(); // [2, 3]
 Iter([1, 2, 3]).toArray(); // [1, 2, 3]
 ```
 
+### `#sample`
+
+Consumes the iterator and returns an array of `n` random samples.
+
+Uses a modified [reservoir sampling](https://florian.github.io/reservoir-sampling/) algoritm
+
+```typescript
+// returns an array of 30 random numbers in the range 0 - 9999
+countFrom0().take(10000).sample(30);
+```
+
 ## `Iter<number>`
 
 ### `#sum`

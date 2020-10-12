@@ -27,7 +27,7 @@ function withIter() {
     .filter((l, i) => i < 5000000)
     .zip(countFrom0())
     .map((s) => JSON.stringify(s).toUpperCase())
-    .map((s: string) => s.toLowerCase())
+    .map((s) => s.toLowerCase())
     .map((s) => s.length)
     .map((s) => s * s)
     .toArray();

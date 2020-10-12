@@ -59,6 +59,32 @@ function* drop<T>(iter: Iterable<T>, count: number) {
   }
 }
 
+function sample<T>(iter: Iterable<T>, count: number) {
+  let position = 1;
+  let out = [];
+
+  for (let value of iter) {
+    if (out.length === 0) {
+      out.push(value);
+    } else if (out.length < count) {
+      out.push(value);
+
+      const randIndex = Math.floor(Math.random() * out.length);
+      const last = out[out.length - 1];
+
+      out[out.length - 1] = out[randIndex];
+      out[randIndex] = last;
+    } else if (Math.random() < count / position) {
+      const randIndex = Math.floor(Math.random() * out.length);
+      out[randIndex] = value;
+    }
+
+    position += 1;
+  }
+
+  return out;
+}
+
 function fold<T, U>(
   iter: Iterable<T>,
   reducer: (agg: U, val: T) => U,
@@ -137,6 +163,7 @@ interface IterBase<T> {
   take(count: number): Iter<T>;
   drop(count: number): Iter<T>;
   zip<U>(iter: Iterable<U>): Iter<[T, U]>;
+  sample(count: number): T[];
   toArray: () => T[];
   [Symbol.iterator]: () => Iterator<T>;
 }
@@ -172,6 +199,7 @@ export function Iter(iter: any) {
     take: (count) => Iter(take(iter, count)),
     drop: (count) => Iter(drop(iter, count)),
     zip: (iter2) => Iter(zip(iter, iter2)),
+    sample: (count) => sample(iter, count),
     toArray: () => toArray(iter),
     // these use some trickery to make typescript stop complaining
     ...(true ? { sum: () => sum(iter) } : {}),
